@@ -10,6 +10,8 @@ const forecast = require('./utils/forecast')
 
 const app = express()
 
+const port = proccess.env.PORT || 3000
+
 
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
@@ -157,7 +159,8 @@ app.get('/weather',(req,res) => {
     })
  
 
-app.listen(3000, () => {
+app.listen(port, () => {
+    console.log('port is' + port)
 
 
 
